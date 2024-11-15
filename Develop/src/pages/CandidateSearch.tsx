@@ -7,7 +7,7 @@ const CandidateSearch = () => {
   const [candidates, setCandidates] = useState<Candidate[]>([]);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
-    // Fetch candidates from GitHub
+  // Fetch candidates from GitHub
   useEffect(() => {
     const fetchCandidates = async () => {
       const data = await searchGithub();
@@ -17,7 +17,7 @@ const CandidateSearch = () => {
     fetchCandidates();
   }, []);
 
-    // Get the next candidate
+  // Get the next candidate
   const getNextCandidate = () => {
     if (currentIndex + 1 < candidates.length) {
       setCurrentIndex(currentIndex + 1);
@@ -27,7 +27,7 @@ const CandidateSearch = () => {
     }
   };
 
-    // Save the current candidate to local storage
+  // Save the current candidate to local storage
   const handleSaveCandidate = async () => {
     const savedCandidates = JSON.parse(localStorage.getItem("potentialCandidates") || "[]");
     const candidate = candidates[currentIndex];
