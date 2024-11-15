@@ -25,12 +25,12 @@ const SavedCandidates = () => {
     {candidates.length === 0 ? (
       <p>No candidates have been accepted.</p>
     ) : (
-      <table>
+      <table className="table" style={{ width: "80%" }}>
         <thead>
           <tr>
             <th>Name</th>
             <th>Avatar</th>
-            <th>Location</th>
+            <th>Username</th>
             <th>Email</th>
             <th>Company</th>
             <th>Action</th>
@@ -43,11 +43,11 @@ const SavedCandidates = () => {
               <td>
                 <img src={candidate.avatar_url} alt={candidate.name} style={{ width: '50px', height: '50px' }} />
               </td>
-              <td>{candidate.location}</td>
+              <td>{candidate.login}</td>
               <td>{candidate.email}</td>
               <td>{candidate.company}</td>
               <td>
-                <button onClick={() => handleDeleteCandidate(index)}>Delete</button>
+                <button onClick={() => handleDeleteCandidate(index)} className="delete">Delete</button>
               </td>
             </tr>
           ))}

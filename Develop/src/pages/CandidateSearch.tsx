@@ -49,6 +49,7 @@ const CandidateSearch = () => {
 
   return (
     <div>
+      <h1>Candidate Search</h1>
       {candidates.length > 0 ? (
         <CandidateCard
           candidate={candidates[currentIndex]}

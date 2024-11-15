@@ -33,13 +33,13 @@ body {
   background-repeat: no-repeat no-repeat;
   background-position: center center;
   margin: 0;
-  place-items: center;
+  /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 2.0em;
   line-height: 1.1;
 }
 
@@ -82,6 +82,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 1.5em;
 }
 
 tr {
@@ -98,6 +99,7 @@ tbody tr:nth-child(odd) {
   display: flex;
   justify-content: flex-start;
   padding: 1em 2em;
+  font-size: 1.8em;
 }
 
 .nav-item {
@@ -117,4 +119,42 @@ tbody tr:nth-child(odd) {
 .table {
   width: 80vw;
   table-layout: fixed;
+}
+
+.candidate-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 20px;
+  background-color: #000;
+  color: white;
+}
+
+button.save {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button.skip {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button.delete {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  cursor: pointer;
 }
