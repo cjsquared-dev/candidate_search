@@ -8,9 +8,9 @@ type CandidateCardProps = {
 
 const CandidateCard = ({ candidate, onSave, onSkip }: CandidateCardProps) => (
   <div className="candidate-card">
-    <img src={candidate.avatar} alt={`${candidate.name}'s avatar`} />
+    <img src={candidate.avatar_url} alt={`${candidate.name}'s avatar`} />
     <h2>{candidate.name}</h2>
-    <p>Username: {candidate.username}</p>
+    <p> {candidate.username}</p>
     <p>Location: {candidate.location}</p>
     <p>Company: {candidate.company}</p>
     <p>Email: {candidate.email}</p>

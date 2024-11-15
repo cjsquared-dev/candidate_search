@@ -1,6 +1,7 @@
 // Interface for Candidate
 export default interface Candidate {
   id: string;
+  login: string;
   name: string;
   username: string;
   location: string;
@@ -9,4 +10,5 @@ export default interface Candidate {
   company: string;
   bio: string;
   avatar: string;
+  avatar_url: string;
 }
