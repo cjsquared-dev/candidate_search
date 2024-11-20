@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <Nav />
-      <main>
+      <main className='candidate-container'>
         <Outlet />
       </main>
     </>

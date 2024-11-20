@@ -33,7 +33,7 @@ body {
   background-repeat: no-repeat no-repeat;
   background-position: center center;
   margin: 0;
-  /* place-items: center; */
+  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -77,8 +77,6 @@ button:focus-visible {
 
 main {
   color: #fff;
-  width: 100%;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -97,19 +95,21 @@ tbody tr:nth-child(odd) {
 
 .nav {
   display: flex;
-  justify-content: flex-start;
-  padding: 1em 2em;
-  font-size: 1.8em;
+  justify-content: flex-start; /* Align items to the left */
+  padding: 1em 2em; /* Consistent padding */
+  font-size: 1.8em; /* Consistent font size */
+  color: #fff; /* Optional: set a consistent text color */
+  justify-content: center;
 }
 
 .nav-item {
-  padding: 0 0.5rem;
+  padding: 0 1rem; /* Consistent padding for nav items */
   list-style: none;
 }
 
 .nav-link {
-  color: #fff;
-  text-decoration: none;
+  color: #fff; /* Consistent link color */
+  text-decoration: none; /* Consistent text decoration */
 }
 
 .active {
@@ -121,6 +121,13 @@ tbody tr:nth-child(odd) {
   table-layout: fixed;
 }
 
+.table td {
+  word-wrap: break-word; /* Allow long words to be broken and wrap onto the next line */
+  overflow-wrap: break-word; /* Ensure that the text will wrap properly */
+  white-space: normal; /* Allow the text to wrap */
+  padding: 0.5em;
+}
+
 .candidate-card {
   display: flex;
   flex-direction: column;
@@ -130,6 +137,7 @@ tbody tr:nth-child(odd) {
   border-radius: 20px;
   background-color: #000;
   color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 button.save {
@@ -154,7 +162,85 @@ button.delete {
   background-color: red;
   color: white;
   border: none;
-  padding: 0.5em 1em;
-  border-radius: 10px;
   cursor: pointer;
+  width: 100%; /* Make the button fill the width of the table cell */
+  box-sizing: border-box; /* Include padding and border in the button's total width */
+  padding: 0.5em; /* Adjust padding for better appearance */
+  font-size: 0.8em; /* Ensure the font size is responsive */
+  border-radius: 5px; /* Optional: Adjust border radius */
+  min-width: 90px; /* Optional: Set a minimum width */
+}
+
+@media screen and (max-width: 768px) {
+  .candidate-card {
+    height: auto; /* Allow height to adjust based on content */
+    width: 90vw;
+  }
+  .nav {
+    font-size: 1.2em; /* Reduce font size for navigation */
+  }
+  h1 {
+    font-size: 1.0em;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+  p {
+    font-size: 0.8em;
+  }
+  table {
+    width: 80px;
+  }
+  button.delete {
+    font-size: 0.4em; /* Reduce font size for smaller screens */
+  }
+}
+
+/* Cards are split into two columns at 992px or smaller */
+@media screen and (max-width: 992px) {
+  .candidate-card {
+    width: 50%;
+    height: auto;
+  }
+  .nav {
+    font-size: 1.0em; /* Reduce font size for navigation */
+  }
+  h1 {
+    font-size: 1.0em;
+  }
+  p {
+    font-size: 0.8em;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+.table {
+  width: 40vw; /* Set a smaller width for the table */
+}
+
+.table, .table th, .table td {
+  font-size: 0.8em; /* Reduce the font size for the table and its elements */
+}
+
+/* Optional: Adjust padding for table cells to make it look more compact */
+.table td {
+  padding: 0.3em; /* Reduce padding for table cells */
+}
+
+.candidate-card img {
+  width: 200px; /* Set a specific width for the avatar */
+  height: 200px; /* Set a specific height for the avatar */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+  border-radius: 50%; /* Make the image circular */
+}
+
+.candidate-card p {
+  margin: 0.5em 0; /* Adjust margin for better spacing */
+  text-align: left; /* Align text to the left */
 }

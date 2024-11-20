@@ -31,8 +31,10 @@ const SavedCandidates = () => {
               <th>Name</th>
               <th>Avatar</th>
               <th>Username</th>
+              <th>Location</th>
               <th>Email</th>
               <th>Company</th>
+              <th>html_url</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -44,8 +46,10 @@ const SavedCandidates = () => {
                   <img src={candidate.avatar_url} alt={candidate.name} style={{ width: '50px', height: '50px' }} />
                 </td>
                 <td>{candidate.login}</td>
+                <td>{candidate.location}</td>
                 <td>{candidate.email}</td>
                 <td>{candidate.company}</td>
+                <td>{candidate.html_url}</td>
                 <td>
                   <button onClick={() => handleDeleteCandidate(index)} className="delete">Delete</button>
                 </td>

@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 const Nav = () => {
   // Get the current page
   const currentPage = useLocation().pathname;
+  
 
   // Return the navigation links
   return (
@@ -15,13 +16,13 @@ const Nav = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/SavedCandidates" className={currentPage === "/SavedCandidates" ? "nav-link" : ""}>
+            <Link to="/SavedCandidates" className={currentPage === "/SavedCandidates" ? "nav-link active" : "nav-link"}>
               Potential Candidates
             </Link>
           </li>
         </ul>
       </nav>
-    </div>
+      </div>
   )
 };
 

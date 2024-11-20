@@ -8,10 +8,13 @@ type CandidateCardProps = {
 
 const CandidateCard = ({ candidate, onSave, onSkip }: CandidateCardProps) => (
   <div className="candidate-card">
-    <img src={candidate.avatar_url} alt={`${candidate.name}'s avatar`} style={{ width: '400px', height: '400px' }} />
-    <h2>{candidate.name}</h2>
-    <p> {candidate.username}</p>
+    <img src={candidate.avatar_url} alt={`${candidate.name}'s avatar`} />
+    <p>Name: {candidate.name}</p>
     <p>Username: {candidate.login}</p>
+    <p>Location: {candidate.location}</p>
+    <p>Email: {candidate.email}</p>
+    <p>URL: {candidate.html_url}</p>
+    <p>Company: {candidate.company}</p>
     <a href={candidate.html_url}>GitHub Profile</a>
     <br />
     <div>
